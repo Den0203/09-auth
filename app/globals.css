@@ -31,8 +31,13 @@ body {
 }
 
 a {
-  color: inherit;
+  color: #ededed;
   text-decoration: none;
+}
+@media (prefers-color-scheme: dark) {
+  a {
+    color: #171717;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
