@@ -3,10 +3,10 @@ import {
   HydrationBoundary,
   QueryClient,
 } from "@tanstack/react-query";
-import { fetchNotes } from "@/lib/api";
 import { NoteTag } from "@/types/note";
 import NotesClientFilter from "./Notes.client";
 import { Metadata } from "next";
+import { fetchServerNotes } from "@/lib/api/serverApi";
 
 export async function generateMetadata({
   params,
@@ -52,9 +52,9 @@ export default async function NotesPage({
   await queryClient.prefetchQuery({
     queryKey: ["notes", { tag: tag ?? "all" }],
     queryFn: () =>
-      fetchNotes({
+      fetchServerNotes({
         page: 1,
-        perPage: 12,
+        perPage: 10,
         search: "",
         ...(tag ? { tag } : {}),
       }),
