@@ -7,7 +7,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import { useDebounce } from "use-debounce";
 import { NoteTag } from "@/types/note";
-import css from "./NotesPage.module.css";
+import css from "./NotePage.module.css";
 import Link from "next/link";
 import { fetchNotes } from "@/lib/api/clientApi";
 
